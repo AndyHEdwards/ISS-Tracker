@@ -5,14 +5,13 @@ import Map from './Map'
 import 'fetch';
 import {issLocation} from './api'
 
-class Stuff extends React.Component {
-  render() {
-    return <p>hehehe</p>
-  }
-}
 
-
-
+setInterval(function(){
 issLocation().then(function(res){
-  ReactDOM.render(<Map location={res[0]} />, document.getElementById('app'))
+  console.log(res)
+  ReactDOM.render(<Map location={res} />, document.getElementById('app'))
 })
+}, 2000)
+
+
+
