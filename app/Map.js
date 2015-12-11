@@ -13,17 +13,17 @@ export default React.createClass({
     this.lastLng = this.props.lng
 
     var map = new GMaps({
-      el: '#map',
-      lat: this.props.location.latitude,
-      lng: this.props.location.longitude
+      div: '#map',
+      lat: -41.2889,
+      lng: 174.7772
     });
 
     console.log(typeof this.props.location.latitude.toString())
 
-    map.addMarker({
-      lat: this.props.location.latitude,
-      lng: this.props.location.longitude
-    });
+    // map.addMarker({
+    //   lat: -41.2889,
+    //   lng: 174.7772
+    // });
   },
 
   render: function(){
