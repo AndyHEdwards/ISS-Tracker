@@ -3,27 +3,23 @@ import {issLocation} from './api'
 
 export default React.createClass({
   componentDidMount(){
-    console.log(this.props)
     this.componentDidUpdate();
+    console.log(this.props)
   },
 
   componentDidUpdate(){
 
-    this.lastLat = this.props.lat;
-    this.lastLng = this.props.lng
-
     var map = new GMaps({
       div: '#map',
-      lat: -41.2889,
-      lng: 174.7772
+      lat: this.props.location.latitude,
+      lng: this.props.location.longitude,
+      zoom: 3
     });
 
-    console.log(typeof this.props.location.latitude.toString())
-
-    // map.addMarker({
-    //   lat: -41.2889,
-    //   lng: 174.7772
-    // });
+    map.addMarker({
+      lat: this.props.location.latitude,
+      lng: this.props.location.longitude
+    });
   },
 
   render: function(){
