@@ -23,5 +23,9 @@
   },
   "dependencies": {
     "superagent": "^1.5.0"
+  },
+  "devDependencies": {
+    "html-dist": "^0.1.0",
+    "uglifyjs": "^2.4.10"
   }
 }
