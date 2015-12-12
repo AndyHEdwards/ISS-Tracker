@@ -7,7 +7,7 @@ export default React.createClass({
       div: '#map',
       lat: this.props.location.latitude,
       lng: this.props.location.longitude,
-      zoom: 1
+      zoom: 2
     });
     map.addMarker({
       lat: this.props.location.latitude,
@@ -20,7 +20,7 @@ export default React.createClass({
   addMarkers: function(){
     setInterval(function(){
       issLocation().then(function(res){
-        window.map.removeMarkers()
+
         window.map.addMarker({
           lat: res.latitude,
           lng: res.longitude
