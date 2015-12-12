@@ -31,9 +31,11 @@ export default React.createClass({
 
   render: function(){
     return (
-      <div className="map-holder">
+      <div>
         <h1>International Space Station Tracker</h1>
-        <div id="map"></div>
+        <div className="map-holder">
+          <div id="map"></div>
+        </div>
       </div>
     );
   }
