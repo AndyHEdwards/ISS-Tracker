@@ -827,7 +827,7 @@ $__System.register('5', ['4', '6'], function (_export) {
             div: '#map',
             lat: this.props.location.latitude,
             lng: this.props.location.longitude,
-            zoom: 1
+            zoom: 2
           });
           map.addMarker({
             lat: this.props.location.latitude,
@@ -840,7 +840,7 @@ $__System.register('5', ['4', '6'], function (_export) {
         addMarkers: function addMarkers() {
           setInterval(function () {
             issLocation().then(function (res) {
-              window.map.removeMarkers();
+
               window.map.addMarker({
                 lat: res.latitude,
                 lng: res.longitude
@@ -852,13 +852,17 @@ $__System.register('5', ['4', '6'], function (_export) {
         render: function render() {
           return React.createElement(
             'div',
-            { className: 'map-holder' },
+            null,
             React.createElement(
               'h1',
               null,
               'International Space Station Tracker'
             ),
-            React.createElement('div', { id: 'map' })
+            React.createElement(
+              'div',
+              { className: 'map-holder' },
+              React.createElement('div', { id: 'map' })
+            )
           );
         }
       }));
