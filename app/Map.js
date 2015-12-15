@@ -36,6 +36,7 @@ export default React.createClass({
         <div className="map-holder">
           <div id="map"></div>
         </div>
+        <p>Current Speed: {this.props.location.speed}</p>
       </div>
     );
   }
