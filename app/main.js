@@ -7,7 +7,6 @@ import {issLocation} from './api'
 
 
   issLocation().then(function(res){
-    console.log(res)
     ReactDOM.render(<Map location={res} />, document.getElementById('app'))
   })
 

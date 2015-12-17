@@ -7,7 +7,7 @@ export default React.createClass({
       div: '#map',
       lat: this.props.location.latitude,
       lng: this.props.location.longitude,
-      zoom: 2
+      zoom: 3
     });
     map.addMarker({
       lat: this.props.location.latitude,
@@ -30,13 +30,15 @@ export default React.createClass({
   },
 
   render: function(){
+    var speed = this.props.location.velocity
+    console.log(speed)
     return (
       <div>
         <h1>International Space Station Tracker</h1>
         <div className="map-holder">
           <div id="map"></div>
         </div>
-        <p>Current Speed: {this.props.location.speed}</p>
+        <p>Current Speed: {speed} Km/h</p>
       </div>
     );
   }
