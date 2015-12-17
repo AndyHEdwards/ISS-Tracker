@@ -827,7 +827,7 @@ $__System.register('5', ['4', '6'], function (_export) {
             div: '#map',
             lat: this.props.location.latitude,
             lng: this.props.location.longitude,
-            zoom: 2
+            zoom: 3
           });
           map.addMarker({
             lat: this.props.location.latitude,
@@ -850,6 +850,8 @@ $__System.register('5', ['4', '6'], function (_export) {
         },
 
         render: function render() {
+          var speed = this.props.location.velocity;
+          console.log(speed);
           return React.createElement(
             'div',
             null,
@@ -862,6 +864,13 @@ $__System.register('5', ['4', '6'], function (_export) {
               'div',
               { className: 'map-holder' },
               React.createElement('div', { id: 'map' })
+            ),
+            React.createElement(
+              'p',
+              null,
+              'Current Speed: ',
+              speed,
+              ' Km/h'
             )
           );
         }
@@ -12335,7 +12344,6 @@ $__System.register('1', ['3', '4', '5', '6', '9'], function (_export) {
     execute: function () {
 
       issLocation().then(function (res) {
-        console.log(res);
         ReactDOM.render(React.createElement(Map, { location: res }), document.getElementById('app'));
       });
     }
