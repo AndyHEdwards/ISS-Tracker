@@ -25,20 +25,20 @@ export default React.createClass({
           lat: res.latitude,
           lng: res.longitude
         });
+         document.getElementById("speed").innerHTML = res.velocity
       })
     }, 1000)
   },
 
   render: function(){
-    var speed = this.props.location.velocity
-    console.log(speed)
     return (
       <div>
         <h1>International Space Station Tracker</h1>
         <div className="map-holder">
           <div id="map"></div>
         </div>
-        <p>Current Speed: {speed} Km/h</p>
+        <p>Current Speed Km/h... </p>
+        <span id="speed" />
       </div>
     );
   }
