@@ -37,8 +37,10 @@ export default React.createClass({
         <div className="map-holder">
           <div id="map"></div>
         </div>
-        <p>Current Speed Km/h... </p>
-        <span id="speed" />
+        <div className="speed">
+          <p>Current Speed Km/h... </p>
+          <span id="speed" />
+        </div>
       </div>
     );
   }
